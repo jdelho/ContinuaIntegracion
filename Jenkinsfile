@@ -13,5 +13,5 @@ pipeline {
 }
 
 def calcularSalarioNeto (int salarioBruto) {
-    echo new Date().getTime()
+    println new Date().getTime()
 }
