@@ -45,9 +45,12 @@ pipeline {
 }
 
 def calcularSalarioNeto (int salarioBruto) {
+    def neto = salarioBruto
     if (salarioBruto > 1000) {
-        println salarioBruto * 0.80
-    } else {
-        println salarioBruto
+        neto = salarioBruto * 0.80
     }
+    echo "Salario bruto:"
+    println(salarioBruto)
+    echo "Salario neto:"
+    println(neto)
 }
