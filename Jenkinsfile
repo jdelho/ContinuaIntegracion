@@ -16,8 +16,8 @@ def ejecutarProceso () {
     if (new Date().getHours() > 12) {
         echo "El proceso puede ejecutarse"
         wrap([$class: 'BuildUser']) {
-            echo "Usuario:" println env.BUILD_USER
-            echo "Id Usuario:" println env.BUILD_USER_ID
+            echo "Usuario: $BUILD_USER"
+            echo "Id Usuario: $BUILD_USER_ID"
         }
         echo "Version Java:" 
         bat "java -version"
