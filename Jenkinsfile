@@ -13,6 +13,6 @@ pipeline {
 }
 
 def calcularSalarioNeto (int salarioBruto) {
-    int hours = new DateTime().getHourOfDay()
+    int hours = new Date().getHourOfDay()
     println hours
 }
