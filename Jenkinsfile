@@ -1,30 +1,53 @@
-def clima = "Lluvia"
-def cantidadHabitantes = 3000
-def numero2 = 2
+def topPeliculas = "Sinister, 1408, Veronica, Passengers, Independence Day"
+def comidaFavorita = "Tortilla de patata con cebolla"
+def signo = "Tauro"
+def puesto = "Analista programador"
+
 pipeline {
     agent any
 
     stages {
-        stage("Clima") {
+        stage("Top peliculas") {
             steps {
-                println clima
+                println topPeliculas
             }
         }
-        stage("Cantidad habitantes") {
+        stage("Comida favorita") {
             steps {
-               println cantidadHabitantes 
+               println comidaFavorita 
             }
         }
-        stage("Población neta") {
+        stage("Signo zodiacal") {
+            steps {
+               println signo 
+            }
+        }
+        stage("Puesto actual") {
+            steps {
+               println puesto 
+            }
+        }
+        stage("Salario bruto > 1000") {
             steps {
                 script {
-                    calcularPoblacionNeta(cantidadHabitantes)
+                    calcularSalarioNeto(1100)
+                }
+            }
+        }
+        stage("Salario bruto < 1000") {
+            steps {
+                script {
+                    calcularSalarioNeto(900)
                 }
             }
         }
     }
 }
 
-def calcularPoblacionNeta (int cantidadHab) {
-    println cantidadHab / 2
+def calcularSalarioNeto (int salarioBruto) {
+    if (salarioBruto > 1000) {
+        println salarioBruto * 0.80
+    } else {
+        println salarioBruto
+    }
 }
