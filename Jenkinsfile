@@ -2,17 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage("Salario bruto < 1000") {
+        stage("Proceso") {
             steps {
                 script {
-                    calcularSalarioNeto(900)
+                    ejecutarProceso()
                 }
             }
         }
     }
 }
 
-def calcularSalarioNeto (int salarioBruto) {
-    int hours = new Date().getHours()
-    println hours
+def ejecutarProceso () {
+    if (new Date().getHours() > 12) {
+        echo "El proceso puede ejecutarse"
+        wrap([$class: 'BuildUser']) {
+          sh 'echo "${BUILD_USER}"'
+        }
+    } else {
+        echo "El proceso no puede ejecutarse"
+    }
 }
