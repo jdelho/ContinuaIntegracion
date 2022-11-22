@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage("Top peliculas") {
-            steps {
-                println topPeliculas
-            }
-        }
         stage("Salario bruto < 1000") {
             steps {
                 script {
