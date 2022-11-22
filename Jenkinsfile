@@ -19,6 +19,7 @@ def ejecutarProceso () {
             def user = env.BUILD_USER_ID
             println user
         }
+        bat "java -version"
     } else {
         echo "El proceso no puede ejecutarse"
     }
