@@ -18,13 +18,13 @@ pipeline {
         stage("Población neta") {
             steps {
                 script {
-                    calcularPoblacionNeta(cantidadPoblacion)
+                    calcularPoblacionNeta(cantidadHabitantes)
                 }
             }
         }
     }
 }
 
-def calcularPoblacionNeta (int cantidadPoblacion) {
-    println cantidadPoblacion / 2
+def calcularPoblacionNeta (int cantidadHab) {
+    println cantidadHab / 2
 }
