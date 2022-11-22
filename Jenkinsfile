@@ -1,57 +1,30 @@
-def nombre = "Jose Luis"
-def numero1 = 1
+def clima = "Lluvia"
+def cantidadHabitantes = 3000
 def numero2 = 2
 pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage("Clima") {
             steps {
-                echo 'Hello World'
+                println clima
             }
         }
-        stage("Uso de variable universal") {
+        stage("Cantidad habitantes") {
             steps {
-               println nombre 
+               println cantidadHabitantes 
             }
         }
-        stage("Mostrar fecha") {
+        stage("Población neta") {
             steps {
                 script {
-                    def dia = new Date()
-                    println dia
-                }
-            }
-        }
-        stage("Calculadora") {
-            steps {
-                println numero1
-                println numero2
-                println numero1 + numero2
-            }
-        }
-        stage("Condicionales") {
-            steps {
-                script {
-                    if (numero1 == 1) {
-                        echo "Numero válido"
-                    } else {
-                        echo "Numero no válido"
-                    }
-                }
-            }
-        }
-        stage("Funcion") {
-            steps {
-                script {
-                   mostrarVersionMaven("Versión maven")
+                    calcularPoblacionNeta(cantidadPoblacion)
                 }
             }
         }
     }
 }
 
-def mostrarVersionMaven (String a) {
-    echo a
-    bat "mvn -v"
+def calcularPoblacionNeta (int cantidadPoblacion) {
+    println cantidadPoblacion / 2
 }
