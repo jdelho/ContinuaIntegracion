@@ -10,7 +10,7 @@ pipeline {
             steps {
                 script {
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm");
-                    String hora dateFormat.format(new Date())
+                    def hora dateFormat.format(new Date())
                     println(hora)
                 }
             }
