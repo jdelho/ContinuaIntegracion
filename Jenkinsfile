@@ -30,7 +30,7 @@ def comprobarDia(int dia) {
         break
         case 2: 
             echo "Martes"
-            println "Suma 150 + 350 = " + new Integer(150) + new Integer(350)
+            println "Suma 150 + 350 = " + ((int)150 + (int)350)
         break
         case 3: 
             echo "Miercoles"
