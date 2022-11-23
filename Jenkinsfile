@@ -2,41 +2,47 @@ pipeline {
     agent any 
     
     stages {
-        stage("Comprobar fecha") {
+        stage("Model Examen 1") {
             steps {
                 script {
-                    int dia = new Date().getDay()
-                    switch(dia) {
-                        case 1: 
-                            echo "Lunes"
-                            echo "El clima es lluvioso"
-                        break
-                        case 2: 
-                            echo "Martes"
-                            echo "El clima es lluvioso"
-                        break
-                        case 3: 
-                            echo "Miercoles"
-                            echo "El clima es lluvioso"
-                        break
-                        case 4: 
-                            echo "Jueves"
-                            echo "El clima es lluvioso"
-                        break
-                        case 5: 
-                            echo "Viernes"
-                            echo "El clima es lluvioso"
-                        break
-                        case 6: case 7: 
-                            echo "Fin de semana"
-                            echo "¡Descanso!"
-                        break
-                        default:
-                            echo "Error al obtener el dia: " dia
-                        break
-                    }
+                    comprobarDia(new Date().getDay())
                 }
             }
         }
+    }
+}
+
+def comprobarDia(int dia) {
+    switch(dia) {
+        case 1: 
+            echo "Lunes"
+            echo "El clima es lluvioso"
+        break
+        case 2: 
+            echo "Martes"
+            echo "Suma 150 + 350 = " + 150+350
+        break
+        case 3: 
+            echo "Miercoles"
+            echo "Numero PI: " + Math.PI
+        break
+        case 4: 
+            echo "Jueves"
+            wrap([$class: 'BuildUser']) {
+                echo "Usuario: $BUILD_USER"
+            }
+        break
+        case 5: 
+            echo "Viernes"
+            echo "Version JAVA: "
+            bat "java -version"
+        break
+        case 6: case 7: 
+            echo "Fin de semana"
+            echo "¡Descanso!"
+        break
+        default:
+            echo "Error al obtener el dia: " dia
+        break
     }
 }
