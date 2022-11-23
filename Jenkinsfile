@@ -7,10 +7,9 @@ pipeline {
                 script {
                     int dia = new Date().getDay()
                     switch(dia) {
-                        case 1: {
+                        case 1: 
                             echo "Lunes"
                             echo "El clima es lluvioso"
-                        }
                         break
                     }
                 }
