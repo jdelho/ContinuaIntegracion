@@ -10,10 +10,36 @@ pipeline {
             steps {
                 script {
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm");
-                    def hora = dateFormat.format(new Date())
-                    println(hora)
+                    def horaActualStr = dateFormat.format(new Date())
+                    def horaActualDate = new SimpleDateFormat("HH:mm").parse(horaActualStr)
+                    echo "Horas actuales"
+                    compararHoras(horaActualDate)
+                    echo "Otras horas"
+                    compararHoras(new SimpleDateFormat("HH:mm").parse("01:30"))
+                    compararHoras(new SimpleDateFormat("HH:mm").parse("12:00"))
+                    compararHoras(new SimpleDateFormat("HH:mm").parse("17:00"))
                 }
             }
         }
+    }
+}
+
+def compararHoras(Date horaActual) {
+    def docePM = new SimpleDateFormat("HH:mm").parse("24:00")
+    def diezAM = new SimpleDateFormat("HH:mm").parse("10:00")
+    def onceAM = new SimpleDateFormat("HH:mm").parse("11:00")
+    def tresPM = new SimpleDateFormat("HH:mm").parse("15:00")
+    def cuatroPM = new SimpleDateFormat("HH:mm").parse("16:00")
+    def diezPM = new SimpleDateFormat("HH:mm").parse("22:00")
+                    
+    if (horaActual.after(docePM) && horaActual.before(diezAM)) {
+        echo "Entre 00:00 y 10:00"
+        bat "ipconfig /flushdns"
+    } else if (horaActual.after(onceAM) && horaActual.before(tresPM)) {
+        echo "Entre 11:00 y 15:00"
+        bat "java -version"
+    } else if (horaActual.after(cuatroPM) && horaActual.before(diezPM)) {
+        echo "Entre 16:00 y 22:00"
+        println horaActual
     }
 }
