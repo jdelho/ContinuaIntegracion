@@ -27,7 +27,7 @@ pipeline {
                             echo "Viernes"
                             echo "El clima es lluvioso"
                         break
-                        case 6, 7: 
+                        case 6: case 7: 
                             echo "Fin de semana"
                             echo "¡Descanso!"
                         break
