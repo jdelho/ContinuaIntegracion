@@ -38,7 +38,7 @@ def compararHoras(Date horaActual) {
         bat "ipconfig /flushdns"
     } else if (horaActual.after(onceAM) && horaActual.before(tresPM)) {
         echo "Entre 11:00 y 15:00"
-        bat "java -version"
+        bat "git --version"
     } else if (horaActual.after(cuatroPM) && horaActual.before(diezPM)) {
         echo "Entre 16:00 y 22:00"
         println horaActual
