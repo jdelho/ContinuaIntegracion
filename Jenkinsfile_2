@@ -5,15 +5,11 @@ pipeline {
         stage("Model Examen 1") {
             steps {
                 script {
-                    echo "Dia real:"
-                    comprobarHora(new Date().getHours()+12)
-                    echo "Otras comprobaciones:"
+                    DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+                    String hora dateFormat.format(new Date())
+                    println(hora)
                 }
             }
         }
     }
-}
-
-def comprobarHora(int hora) {
-  println hora
 }
