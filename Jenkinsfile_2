@@ -15,5 +15,5 @@ pipeline {
 }
 
 def comprobarHora(int hora) {
-  echo hora
+  println hora
 }
