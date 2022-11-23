@@ -5,7 +5,17 @@ pipeline {
         stage("Model Examen 1") {
             steps {
                 script {
+                    echo "Dia real:"
                     comprobarDia(new Date().getDay())
+                    echo "Otras comprobaciones:"
+                    comprobarDia(1)
+                    comprobarDia(2)
+                    comprobarDia(3)
+                    comprobarDia(4)
+                    comprobarDia(5)
+                    comprobarDia(6)
+                    comprobarDia(7)
+                    comprobarDia(8)
                 }
             }
         }
