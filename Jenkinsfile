@@ -11,6 +11,26 @@ pipeline {
                             echo "Lunes"
                             echo "El clima es lluvioso"
                         break
+                        case 2: 
+                            echo "Martes"
+                            echo "El clima es lluvioso"
+                        break
+                        case 3: 
+                            echo "Miercoles"
+                            echo "El clima es lluvioso"
+                        break
+                        case 4: 
+                            echo "Jueves"
+                            echo "El clima es lluvioso"
+                        break
+                        case 5: 
+                            echo "Viernes"
+                            echo "El clima es lluvioso"
+                        break
+                        case 6, 7: 
+                            echo "Fin de semana"
+                            echo "¡Descanso!"
+                        break
                     }
                 }
             }
