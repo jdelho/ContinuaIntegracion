@@ -52,7 +52,7 @@ def comprobarDia(int dia) {
             echo "¡Descanso!"
         break
         default:
-            echo "Error al obtener el dia: " dia
+            echo "Error al obtener el dia: " + dia
         break
     }
 }
