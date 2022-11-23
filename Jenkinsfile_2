@@ -6,9 +6,8 @@ pipeline {
             steps {
                 script {
                     echo "Dia real:"
-                    comprobarDia(new Date().getHours()+5)
+                    comprobarHora(new Date().getHours()+5)
                     echo "Otras comprobaciones:"
-                    comprobarDia(hora)
                 }
             }
         }
