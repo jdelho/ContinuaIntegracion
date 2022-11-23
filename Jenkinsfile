@@ -31,6 +31,9 @@ pipeline {
                             echo "Fin de semana"
                             echo "¡Descanso!"
                         break
+                        default:
+                            echo "Error al obtener el dia: " dia
+                        break
                     }
                 }
             }
