@@ -25,7 +25,7 @@ pipeline {
 }
 
 def compararHoras(Date horaActual) {
-    echo horaActual
+    println horaActual
     def docePM = new SimpleDateFormat("HH:mm").parse("24:00")
     def diezAM = new SimpleDateFormat("HH:mm").parse("10:00")
     def onceAM = new SimpleDateFormat("HH:mm").parse("11:00")
