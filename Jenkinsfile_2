@@ -6,7 +6,7 @@ pipeline {
     agent any 
     
     stages {
-        stage("Model Examen 1") {
+        stage("Model Examen 2") {
             steps {
                 script {
                     DateFormat dateFormat = new SimpleDateFormat("HH:mm");
