@@ -7,7 +7,7 @@ pipeline {
                 script {
                     echo "Dia real:"
                     comprobarDia(new Date().getDay())
-                    echo "Otras comprobaciones:"
+                    echo "Comprobar resto de dias:"
                     comprobarDia(1)
                     comprobarDia(2)
                     comprobarDia(3)
