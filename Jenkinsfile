@@ -2,7 +2,7 @@ pipeline {
     agent any 
     
     stages {
-        stage("Model Examen 1") {
+        stage("Examen Final") {
             steps {
                 script {
                     echo "Dia real:"
