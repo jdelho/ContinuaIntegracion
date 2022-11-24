@@ -48,7 +48,7 @@ def comprobarDia(int dia) {
         break
         case 5: case 6: case 7:
             echo "Viernes, Sabado o Domingo"
-            echo "¡Descanso!"
+            echo "No se han indicado acciones para estos dias"
         break
         default:
             echo "Error al obtener el dia: " + dia
