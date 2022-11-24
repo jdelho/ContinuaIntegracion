@@ -26,8 +26,11 @@ def comprobarDia(int dia) {
     switch(dia) {
         case 1: 
             echo "Lunes"
-            println "Suma: 10 + 5 = " + (int)10 + (int)5
-            println "Resta: 10 - 5 = " + (int)10 - (int)5
+            int numero1 = 10
+            int numero2 = 5
+            println "Operaciones con numeros " + numero1 + " y " + numero2
+            println "Suma: 10 + 5 = " + (numero1 + numero2)
+            println "Resta: 10 - 5 = " + ((int)10 - (int)5)
             println "Multiplicacion: 5 * 10 = " + (int)5 * (int)10
             println "Division: 10 / 2 = " + (int)10 / (int)2
         break
