@@ -26,29 +26,25 @@ def comprobarDia(int dia) {
     switch(dia) {
         case 1: 
             echo "Lunes"
-            echo "El clima es lluvioso"
+            println "Suma: 10 + 5 = " + (int)10 + (int)5
+            println "Resta: 10 - 5 = " + (int)10 - (int)5
+            println "Multiplicacion: 5 * 10 = " + (int)5 * (int)10
+            println "Division: 10 / 2 = " + (int)10 / (int)2
         break
         case 2: 
             echo "Martes"
-            println "Suma 150 + 350 = " + ((int)150 + (int)350)
+            echo "Usuario: Jose Luis Del Hoyo Fernandez"
         break
         case 3: 
             echo "Miercoles"
-            echo "Numero PI: " + Math.PI
+            echo "¡Pipeline ejecutado!"
         break
         case 4: 
             echo "Jueves"
-            wrap([$class: 'BuildUser']) {
-                echo "Usuario: $BUILD_USER"
-            }
+            echo "Clima: Lluvioso"
         break
-        case 5: 
-            echo "Viernes"
-            echo "Version JAVA: "
-            bat "java -version"
-        break
-        case 6: case 7: 
-            echo "Fin de semana"
+        case 5: case 6: case 7:
+            echo "Viernes, Sabado o Domingo"
             echo "¡Descanso!"
         break
         default:
